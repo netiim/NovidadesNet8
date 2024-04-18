@@ -3,12 +3,7 @@ using NovidadesNet8._03___PrimaryConstrutor;
 
 //DeserializaJson();
 //SerializarJson();
-
-Aluno aluno = new("paulo");
-Console.WriteLine(aluno.Nome);
-Console.WriteLine(aluno.Telefone);
-Console.WriteLine(aluno.Idade);
-Console.WriteLine(aluno.Situacao);
+//UsandoPrimaryConstructor();
 
 static void DeserializaJson()
 {
@@ -36,11 +31,19 @@ static void SerializarJson()
     /// SnakeLower= [{"nome_completo":"Paulo Neto","idade_anos":20},{ "nome_completo":"","idade_anos":20}]
     /// </summary>
     List<Pessoa> pessoas = new()
-{
-    new Pessoa{NomeCompleto = "Paulo Neto", IdadeAnos = 20},
-    new Pessoa{NomeCompleto = "" , IdadeAnos = 20}
-};
+    {
+        new Pessoa{NomeCompleto = "Paulo Neto", IdadeAnos = 20},
+        new Pessoa{NomeCompleto = "" , IdadeAnos = 20}
+    };
 
     string result = UtilJson.SerializarJson(pessoas, UtilJson.Policy.SnakeLower);
     Console.WriteLine(result);
+}
+static void UsandoPrimaryConstructor()
+{
+    Aluno aluno = new("paulo");
+    Console.WriteLine(aluno.Nome);
+    Console.WriteLine(aluno.Telefone);
+    Console.WriteLine(aluno.Idade);
+    Console.WriteLine(aluno.Situacao);
 }
